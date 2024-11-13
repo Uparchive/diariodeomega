@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>365 Dias Diversos - Kell Shalom</title>
+    <link rel="stylesheet" href="capastyle.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Verifica se há um último capítulo lido no localStorage
+            const lastReadChapter = localStorage.getItem("lastReadChapter");
+            const continueButton = document.getElementById("continue-button");
+
+            if (lastReadChapter) {
+        // Se houver um último capítulo lido, mostra "Continuar Leitura" e redireciona para o arquivo correto do capítulo
+        continueButton.textContent = "Continuar Leitura";
+        continueButton.href = `${lastReadChapter}.html`; // Redireciona para o arquivo HTML do último capítulo lido
+             } else {
+                // Se não houver, mostra "Iniciar Leitura" e redireciona para o Capítulo 1
+                continueButton.textContent = "Iniciar Leitura";
+                continueButton.href = "capitulo1.html"; // Redireciona para o Capítulo 1
+            }
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(chapterId) {
+            localStorage.setItem("lastReadChapter", chapterId);
+        }
+    </script>    
+</head>
+<body>
+    <div class="container">
+        <a href="indice.html">
+            <img src="https://firebasestorage.googleapis.com/v0/b/armazene-acd30.appspot.com/o/uploads%2Fz0wQUWxFhKRBeMLIHIjOHd1dpHn2%2FDi%C3%A1rio%20de%20%C3%94mega%20Poster.png?alt=media&token=8842addd-70c2-4720-8deb-4d2131ec916a" alt="Capa do livro 365 Dias Diversos" class="book-cover">
+        </a>
+        <h1 class="book-title">Diário de Ômega</h1>
+        <h2 class="book-subtitle">"Não passará esta geração sem que tudo se cumpra"</h2>
+        <h3>(Mateus 24:34)</h3>
+        <p class="author-name">Anônimo</p>
+        <div class="buttons">
+            <a id="continue-button" href="#" class="button">Iniciar Leitura</a>
+        </div>
+    </div>
+</body>
+</html>

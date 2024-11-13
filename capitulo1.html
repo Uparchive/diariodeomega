@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Salvar o ID do capítulo atual no localStorage
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+        });
+
+        // Função para salvar o capítulo atual no localStorage
+        function setLastRead(chapterId) {
+            localStorage.setItem("lastReadChapter", chapterId);
+            console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
+        }
+    </script>
+</head>
+<body>
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo1" -->
+    <div class="container capitulo" id="capitulo1">
+        <h1 class="chapter-number">Capítulo 1</h1>
+        <h2 class="chapter-title">O Caminho da Juventude e Suas Escolhas</h2>
+
+        <h3>A Juventude e suas Consequências</h3>
+        <p>¹ Vós que sois jovens, vivam o agora, pois sois livres. ² Porém saibam, que as consequências de vossos atos sobrevirão sobre vós em vossa velhice.</p>
+        <p>³ Pois o que planta aqui, aqui colherá, assim como o que vive aqui, aqui deixará de viver.</p>
+        <p>⁴ O que torna à vós em vossa colheita é o fruto do vosso trabalho, portanto, cuidai para que a semente que tu planta não seja o pecado, pois o seu fruto é a morte.</p>
+
+        <h3>O Exército dos Ímpios</h3>
+        <p>⁵ O Mestre disse que o pecado mata e o Espírito vivifica.</p>
+        <p>⁶ Eu, complemento, dizendo que o pecado te apodrece mesmo tu estando vivo!</p>
+        <p>⁷ Pois pior é um morto que caminha, do que um corpo sem o fôlego de vida.</p>
+
+        <h3>Os Ômegas da Terra</h3>
+        <p>⁸ Nós somos os ômegas, os filhos da última geração.</p>
+        <p>⁹ Fecharão suas portas e não haverá brechas em janelas.</p>
+        <p>¹⁰ As ruas estarão cobertas de abutres que devorarão as almas dos filhos da iniquidade.</p>
+        <p>¹¹ Pois é chegada a hora do Filho do Homem!</p>
+        <p>¹² Quem limpará o pecado do mundo? O Filho do Homem!</p>
+        <p>¹³ Quem aniquilará as traças e as ferrugens? O Filho do Homem!</p>
+        <p>¹⁴ Quem reinará sobre os justos da terra? O Filho do Homem!</p>
+        <p>¹⁵ Quem somos nós? Os Filhos do Altíssimo. Os ômegas da terra.</p>
+
+        <h3>A Atitude</h3>
+        <p>¹⁶ Das dúvidas do coração procedem indecisões, e da sabedoria do homem a loucura e a tolice.</p>
+        <p>¹⁷ Não sejais como os hipócritas que murmuram por atitude e não fazem por voluntariedade; ¹⁸ Porém, todavia faça vós mesmos de graça o que deve ser feito.</p>
+        <p>¹⁹ Atentai-vos pois às ações caridosas! Ações essas feitas por compaixão e amor, tornando-se incompreensíveis por serem incompensáveis.</p>
+        <p>²⁰ Pois a boca não fala como fala o vosso corpo, e homem não entende o que o dinheiro não paga.</p>
+
+        <h3>Para Ele e por Ele</h3>
+        <p>²¹ Não por nós, mas por Ele. ²² Pois depende de sua vontade e não da nossa.</p>
+        <p>²³ De nada é nosso, porém, tudo é dEle, para Ele são todas as coisas e por sua vontade serei perdoado.</p>
+        <p>²⁴ Através da sua misericórdia entrarei no seu reino, e por sua vontade viverei os meus dias.</p>
+
+        <h3>A Religião e a Espiritualidade</h3>
+        <p>²⁵ Falo a vós, todos os que dizem ser religiosos, que a religião não remete a espiritualidade, pois em verdade são duas coisas distintas uma da outra.</p>
+        <p>²⁶ Pelo que vos digo, deixo claro que não cabe a nós julgarmos qual religião é a certa, porque não há religião certa que não seja amar a Deus acima de tudo e ao próximo como a si mesmo.</p>
+        <p>²⁷ Sejam os católicos do catolicismo, os protestantes do protestantismo, os hindus do hinduísmo e os budistas do budismo; pois se conhecessem a verdade, a verdade vos libertaria, e se a conhecem, por que não a praticam?</p>
+        <p>²⁸ Pelo que cabe a mim vos dizer o certo e o errado? ²⁹ Em verdade vos digo que não é por intermédio da religião que vós sois salvos, e sim, por intermédio de Cristo.</p>
+        <p>³⁰ Portanto meus irmãos, quando forem repreender os vossos semelhantes pelo evangelho de Cristo, que seja com amor e longanimidade, para que não haja irá entre vós, e nem tampouco divisões e contendas.</p>
+        <p>³¹ Pois a vontade do Senhor é o amor para com o próximo, e o princípio do amor é o respeito e a paciência em suportar uns aos outros.</p>
+
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo00.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('capitulo2.html')">Próximo</button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

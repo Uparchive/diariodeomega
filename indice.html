@@ -6,10 +6,19 @@
     <title>Índice dos Capítulos</title>
     <link rel="stylesheet" href="indicestyle.css">
     <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Identifique o livro atual (por exemplo, usando um atributo data no body)
+            const currentBook = document.body.dataset.bookId || "defaultBook"; // Exemplo: 'diariodeomega'
+
+            // Função para obter o nome do armazenamento local com base no livro
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
             // Recupera o último capítulo lido do localStorage
-            const lastReadChapter = localStorage.getItem("lastReadChapter");
+            const lastReadChapter = localStorage.getItem(getStorageKey());
             console.log("Último capítulo lido recuperado do localStorage:", lastReadChapter); // Log para debug
 
             // Se houver um capítulo salvo no localStorage
@@ -30,27 +39,20 @@
 
         // Função para salvar o capítulo atual no localStorage ao clicar
         function setLastRead(chapterId) {
-            localStorage.setItem("lastReadChapter", chapterId);
+            const currentBook = document.body.dataset.bookId || "defaultBook"; // Exemplo: 'diariodeomega'
+            const storageKey = `${currentBook}_lastReadChapter`;
+            localStorage.setItem(storageKey, chapterId);
             console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
         }
     </script>
 </head>
-<body>
+<body data-book-id="diariodeomega">
     <div class="container">
         <h1>Índice dos Capítulos</h1>
         <ul class="chapter-list">
-            <li id="sobre"><a href="sobre.html" onclick="setLastRead('sobre')">Sobre o Livro - Echoes Of Eternity</a></li>
-            <li id="capitulo1"><a href="capitulo1.html" onclick="setLastRead('capitulo1')">Capítulo 1 - O Relógio Celestial</a></li>
-            <li id="capitulo2"><a href="capitulo2.html" onclick="setLastRead('capitulo2')">Capítulo 2 - Ecos no Vazio</a></li>
-            <li id="capitulo3"><a href="capitulo3.html" onclick="setLastRead('capitulo3')">Capítulo 3 - A Cidade das Sombras</a></li>
-            <li id="capitulo4"><a href="capitulo4.html" onclick="setLastRead('capitulo4')">Capítulo 4 - O Portal da Eternidade</a></li>
-            <li id="capitulo5"><a href="capitulo5.html" onclick="setLastRead('capitulo5')">Capítulo 5 - O Enigma da Fenda</a></li>
-            <li id="capitulo6"><a href="capitulo6.html" onclick="setLastRead('capitulo6')">Capítulo 6 - A Escolha do Tempo</a></li>
-            <li id="capitulo7"><a href="capitulo7.html" onclick="setLastRead('capitulo7')">Capítulo 7 - O Guardião Silencioso</a></li>
-            <li id="capitulo8"><a href="capitulo8.html" onclick="setLastRead('capitulo8')">Capítulo 8 - Fragmentos do Infinito</a></li>
-            <li id="capitulo9"><a href="capitulo9.html" onclick="setLastRead('capitulo9')">Capítulo 9 - Ecos de Um Novo Amanhã</a></li>
-            <li id="capitulo10"><a href="capitulo10.html" onclick="setLastRead('capitulo10')">Capítulo 10 - O Horizonte Final</a></li>
-
+            <li id="capitulo1"><a href="capitulo1.html" onclick="setLastRead('capitulo1')">Capítulo 1: O Caminho da Juventude e Suas Escolhas</a></li>
+            <li id="capitulo2"><a href="capitulo2.html" onclick="setLastRead('capitulo2')">Capítulo 2: A Purificação em Cristo e o Novo Avivamento</a></li>
+            <li id="capitulo3"><a href="capitulo3.html" onclick="setLastRead('capitulo3')">Capítulo 3: A Queda e a Sabedoria dos Justos</a></li>
         </ul>        
         <a href="index.html" class="back-button">Voltar à Capa</a>
     </div>

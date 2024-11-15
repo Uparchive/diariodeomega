@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentPage = 0;
 
     // Recupera o último capítulo lido do localStorage
-    const lastReadChapter = localStorage.getItem("lastReadChapter");
+    const lastReadChapter = localStorage.getItem("echoesofeternity");
     if (lastReadChapter && !isNaN(parseInt(lastReadChapter))) {
         currentPage = parseInt(lastReadChapter);
         // Aplica a classe 'flip' nas páginas anteriores ao último capítulo lido
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Função para atualizar o último capítulo lido no localStorage
     function setLastReadChapter(chapterIndex) {
-        localStorage.setItem("lastReadChapter", chapterIndex);
+        localStorage.setItem("echoesofeternity", chapterIndex);
     }
 
     // Função para atualizar o destaque no capítulo atual

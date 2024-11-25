@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 4</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="responsive.js" defer></script>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Identifique o livro atual (por exemplo, usando um atributo data no body)
+            const currentBook = document.body.dataset.bookId || "diario-de-omega"; // Exemplo: 'NomeDoSeuLivro'
+
+            // Função para obter o nome do armazenamento local com base no livro
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            // Salvar o ID do capítulo atual no localStorage
+            const currentChapterId = document.querySelector(".capitulo").id;
+            setLastRead(currentChapterId);
+
+            // Função para salvar o capítulo atual no localStorage
+            function setLastRead(chapterId) {
+                localStorage.setItem(getStorageKey(), chapterId);
+                console.log("Capítulo salvo no localStorage:", chapterId); // Log para debug
+            }
+        });
+
+        function navigateTo(url) {
+            const currentBook = document.body.dataset.bookId || "defaultBook"; // Exemplo: 'diariodeomega'
+            const currentChapterId = document.querySelector(".capitulo").id;
+
+            function getStorageKey() {
+                return `${currentBook}_lastReadChapter`;
+            }
+
+            // Salva o capítulo atual no localStorage antes de navegar
+            localStorage.setItem(getStorageKey(), currentChapterId);
+            console.log("Navegando para:", url, "Capítulo salvo:", currentChapterId);
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body data-book-id="diario-de-omega">
+    <!-- Identificação do capítulo com classe "capitulo" e id "capitulo4" -->
+    <div class="container capitulo" id="capitulo4">
+        <h1 class="chapter-number">Capítulo 4</h1>
+        <h2 class="chapter-title">O Silêncio de Deus é a Voz que Mais Fala</h2>
+        <p>No silêncio, podemos escutar a voz de Deus, não com palavras, mas em cada detalhe do absoluto e temeroso silêncio.</p>
+        <p>Irmãos, não busquem respostas para aquilo que os aflige no externo, tendo o poder internalizado em vós de buscar, no oculto, a sabedoria e a resposta d'Aquele que olha e conhece todas as coisas, e as conhece porque as fundou pelo Verbo.</p>
+        <p>Pois a sabedoria é poder internalizado em vossas mentes, e o Verbo a ensinou como se fosse sua aluna. Agora, pois, levem seus corações ao equilíbrio e caos da sabedoria incontaminada do Espírito.</p>
+        <p>Encontrem dentro de vós a vocação para a qual foram chamados, no silêncio da paz de Deus. Pois, nesta paz, do silêncio, podemos absorver as respostas às perguntas que nos fazemos incessantemente, perseverando em duvidar das coisas que não há dúvidas.</p>
+        <p>Crendo nas coisas em que não devemos crer, sabendo das mentiras, tornando-as verdades que contaminam e depravam o nosso conhecimento.</p>
+        <p>Respiramos pelo sopro do fôlego de vida que de Deus provém, transformando um boneco de barro inanimado em uma alma vivente.</p>
+        <p>No silêncio do caos do infinito, as coisas que conhecemos e vimos com nossos olhos, contaminados pela matéria, das quais provamos e constatamos a existência com aquilo que é tangível e quantitativo, palpável, perceptível, materializado.</p>
+        <p>Tudo o que podemos, incontáveis possibilidades em um mundo mergulhado na mentira, é a própria mentira materializada nas vaidades fúteis perceptíveis.</p>
+        <p>Enquanto a fé é o firme fundamento das coisas que não se veem, mas que se esperam.</p>
+        <p>O silêncio não é vazio, mas pleno de significado para aqueles que têm sensibilidade espiritual.</p>
+        <p>A "surdez" não é apenas uma incapacidade física, mas uma metáfora para a falta de percepção espiritual. Muitos ouvem sons, mas poucos compreendem as mensagens invisíveis que o Espírito transmite.</p>
+        <div class="buttons">
+            <button class="previous" onclick="navigateTo('capitulo3.html')">Anterior</button>
+            <button class="index" onclick="navigateTo('indice.html')">Índice</button>
+            <button class="next" onclick="navigateTo('continua.html')">Próximo</button>
+        </div>
+    </div>
+</body>
+</html>

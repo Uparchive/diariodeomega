@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentPage = 0;
 
     // Identifique o livro atual (exemplo: usando um atributo data no body)
-    const currentBook = document.body.dataset.bookId || "defaultBook"; // Exemplo: 'diariodeomega'
+    const currentBook = document.body.dataset.bookId || "diario-de-omega"; // Exemplo: 'NomeDoSeuLivro'
 
     // Função para obter o nome do armazenamento local com base no livro
     function getStorageKey() {

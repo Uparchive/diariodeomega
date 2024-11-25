@@ -10,7 +10,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Identifique o livro atual (por exemplo, usando um atributo data no body)
-            const currentBook = document.body.dataset.bookId || "defaultBook"; // Exemplo: 'diariodeomega'
+            const currentBook = document.body.dataset.bookId || "diario-de-omega"; // Exemplo: 'NomeDoSeuLivro'
 
             // Função para obter o nome do armazenamento local com base no livro
             function getStorageKey() {
@@ -46,7 +46,7 @@
         }
     </script>
 </head>
-<body data-book-id="diariodeomega">
+<body data-book-id="diario-de-omega">
     <div class="container">
         <h1>Índice dos Capítulos</h1>
         <ul class="chapter-list">
